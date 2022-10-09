@@ -19,7 +19,7 @@ wp_register_style('kpr_bootstrap_css', plugins_url('/css/bootstrap.min.css', __F
 wp_register_style('kpr_simulation_css', plugins_url('/css/styles.css', __FILE__ ));
 
 
-function nks_load_form()
+function load_form()
 {
     include( plugin_dir_path( __FILE__ ) . 'views/form.php');
 }
@@ -33,4 +33,4 @@ wp_enqueue_script('kpr_js_script');
 wp_enqueue_style('kpr_bootstrap_css');
 wp_enqueue_style('kpr_simulation_css');
 
-add_shortcode('nadaft_kpr_simulation_form', 'nks_load_form');
+add_shortcode('naf_kpr_form', 'load_form');

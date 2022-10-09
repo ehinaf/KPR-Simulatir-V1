@@ -1,11 +1,10 @@
 <div class="container-sm">
-    <h4>Simulasi KPR</h4>
-    <div class="row">
+    <div class="row mt-2">
         <div class="col-md-5 card-form-kpr">
                 <form method="post" accept-charset="utf-8" id="myKpr-form">
                     <div class="row">
                         <div class="col-5">
-                            <p class="fs-6">Harga Property</p>
+                            <p class="title-form">Harga Property</p>
                         </div>
                         <div class="col-7">
                             <div class="input-group mb-3">
@@ -16,7 +15,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-4">
-                            <p class="fs-6">Uang Muka</p>
+                            <p class="title-form">Uang Muka</p>
                         </div>
                         <div class="col-8">
                             <div class="input-group mb-2">
@@ -37,10 +36,10 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-7">
-                            <p class="fs-6">Jangka Waktu</p>
+                            <p class="title-form">Jangka Waktu</p>
                         </div>
                         <div class="col-5">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                                 <input type="number" id="jangkaWaktu"  min="1" max="30" value="20" class="form-control" placeholder="0">
                                 <span class="input-group-text" id="basic-addon1">Tahun</span>
                             </div>
@@ -55,10 +54,10 @@
 
                     <div class="row mt-2">
                         <div class="col-7">
-                            <p class="fs-6">Suku Bunga Fix</p>
+                            <p class="title-form">Suku Bunga Fix</p>
                         </div>
                         <div class="col-5">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                                 <input type="number" id="sukuBungaFix"  min="1" max="30" step="0.5" value="7.5" class="form-control" placeholder="0">
                                 <span class="input-group-text" id="basic-addon1">%</span>
                             </div>
@@ -73,10 +72,10 @@
                     
                     <div class="row mt-2">
                         <div class="col-7">
-                            <p class="fs-6">Masa Kredit Fix</p>
+                            <p class="title-form">Masa Kredit Fix</p>
                         </div>
                         <div class="col-5">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                                 <input type="number" id="masaKreditFix"  min="1" max="10" value="5" class="form-control" placeholder="0">
                                 <span class="input-group-text" id="basic-addon1">Tahun</span>
                             </div>
@@ -91,10 +90,10 @@
                     
                     <div class="row mt-2">
                         <div class="col-7">
-                            <p class="fs-6">Suku Bunga Floating</p>
+                            <p class="title-form">Suku Bunga Floating</p>
                         </div>
                         <div class="col-5">
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-2">
                                 <input type="number" id="sukuBunga"  min="1" max="15" value="12" class="form-control" placeholder="0">
                                 <span class="input-group-text" id="basic-addon1">%</span>
                             </div>
@@ -123,7 +122,7 @@
                             <div class="judul-credit-fix">
                                 Angsuran/bulan (Masa kredit fix)
                             </div>
-                            <div class="nominal-credit-fix">
+                            <div class="nominal-credit-fix"  id="angsuranPertamaCard">
                                 3.222.373
                             </div>    
                         </div>    
@@ -142,7 +141,7 @@
             </div>
 
             <div class="row mt-3 p-2">
-                <p class="fs-6 fw-bold text-dark border-bottom p-2">Pembayaran Pertama</p> 
+                <p class="title-form fw-bold text-dark border-bottom p-2">Pembayaran Pertama</p> 
                 
                 <div class="d-flex justify-content-between">
                     <div class="label">Uang Muka</div>
@@ -164,32 +163,32 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row p-2">
+                <p class="title-form fw-bold text-dark border-bottom p-2">Detail Pinjaman</p> 
+                
+                <div class="d-flex justify-content-between">
+                    <div class="label">Pinjaman Pokok</div>
+                    <div class="nominal" id="pinjamanPokok">400.000.000</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="label">Estimasi Bunga Pinjaman</div>
+                    <div class="nominal" id="angsuranPertama">Rp 544.281.653</div>
+                </div>
+            </div>
+
+            <div class="row p-2">
+                <p class="title-form fw-bold text-dark border-bottom p-2">Ketentuan Penghasilan Minimal</p> 
+                
+                <div class="d-flex justify-content-between">
+                    <div class="label">Angsuran 30% dari penghasilan</div>
+                    <div class="nominal" id="30persenPenghasilan">Rp 10.741.243</div>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="label">Angsuran 40% dari penghasilan</div>
+                    <div class="nominal" id="40persenPenghasilan">Rp 8.055.932</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-
-<form method="post" accept-charset="utf-8" id="nadaft-kpr-simulation-form">
-    <h1 class="text-center">Simulasi KPR</h1>
-    <div class="input-container">
-        <div class="input-group">
-            <p>Harga Properti</p>
-            <input id="kprPrice" class="input-kpr" type="text" min="1" value="195000000" data-inputmask="'alias': 'decimal', 'groupSeparator': ',', 'autoGroup': true">
-        </div>
-        <div class="input-group">
-            <p>Jangka Waktu (Tahun)</p>
-            <input id="kprDuration" class="input-kpr" type="number" min="1" value="10">
-        </div>
-        <div class="input-group">
-            <p>Bunga (%)</p>
-            <input id="kprInterest" class="input-kpr" type="number" step="any" min="1" value="8.0">
-        </div>
-        <div class="input-group">
-            <button class="btn btn-kpr" type="submit">Hitung</button>
-        </div>
-        <div class="show-installment">
-            <p>Angsuran per Bulan</p>
-            <h6 id="kprInstallment" class="kpr-installment">Rp. 0</h6>
-        </div>
-    </div>
-</form>

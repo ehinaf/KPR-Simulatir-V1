@@ -1,10 +1,11 @@
 jQuery(document).ready(function () {
-    
+
     jQuery("#myKpr-form").on('submit', function(event){
         event.preventDefault();
 
         //Uang Muka
         nominalUangMuka = jQuery("#nominalUangMuka").val();        
+        angsuranPertamaCard = jQuery("#angsuranPertamaCard");        
         angsuranPertama = jQuery("#angsuranPertama");        
         
         nominalUangMuka_format = accounting.formatNumber(nominalUangMuka, 0, ".", ",");  
@@ -22,17 +23,34 @@ jQuery(document).ready(function () {
         totalAngsuranPertama = pokokPinjaman + bungaBulan;
 
         angsuranPertama_format = accounting.formatNumber(totalAngsuranPertama, 0, ".", ",");
+
         angsuranPertama.text(angsuranPertama_format);
+        angsuranPertamaCard.text(angsuranPertama_format)
+       
+        //Estimasi Biaya Lain
+        persenUangMuka = jQuery("#persenUangMuka").val();
+        
+        estimasiBiayaNon =  (hargaProperty / 100) * 6;
+        estimasiBiayaLain = ((100 - persenUangMuka) / 100) * estimasiBiayaNon;
+        estimasiBiayaLain_format = accounting.formatNumber(estimasiBiayaLain, 0, ".", ",");        
+        jQuery("#estimasiBiayaLain").text(estimasiBiayaLain_format);
+
 
         //Total Pembiayaan Pertama
 
-        estimasiBiayaLain = 24000000;
         totalBiayaPertama = jQuery("#totalBiayaPertama");
-
+        
         resulTotalBiaya = parseInt(nominalUangMuka) + parseInt(totalAngsuranPertama) + parseInt(estimasiBiayaLain);
         totalBiayaPertama_format = accounting.formatNumber(resulTotalBiaya, 0, ".", ",");
-
         totalBiayaPertama.text("Rp. " + totalBiayaPertama_format);
+        
+        //pinjaman Pokok
+        pinjamanPokok = jQuery("#pinjamanPokok");
+        resultPinjamanPokok = hargaProperty - nominalUangMuka;
+        pinjamanPokok_format = accounting.formatNumber(resultPinjamanPokok, 0, ".", ",");
+
+        pinjamanPokok.text(pinjamanPokok_format);
+
 
         
     });

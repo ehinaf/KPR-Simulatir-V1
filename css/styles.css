@@ -5,9 +5,10 @@
     box-shadow: 0 2px 8px rgba(40,41,61,.04),0 16px 24px rgba(96,97,112,.16);
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus{
     outline: none;
 }
+
 
 .form-control:focus {
     border: 1 solid ;
@@ -15,14 +16,27 @@ input:focus, textarea:focus, select:focus{
     box-shadow: none;
 }
 
+.form-control {
+    font-size: 14px;
+}
+
 input.form-control.persen{
     flex: none;
     width: 43px;
 }
 
+.input-group-text {
+    font-size: 14px;
+}
+
+
+.title-form {
+    font-size: 14px;
+}
+
 .indicator-persen{
     color: #747474;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .validasi-uang-muka .success-message{
@@ -67,7 +81,7 @@ input.form-control.persen{
 .nominal-credit-fix, .nominal-credit-floating {
     color: #2951a3;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .label {
