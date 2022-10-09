@@ -1,0 +1,212 @@
+.card-form-kpr{
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(40,41,61,.04),0 16px 24px rgba(96,97,112,.16);
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.form-control:focus {
+    border: 1 solid ;
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
+input.form-control.persen{
+    flex: none;
+    width: 43px;
+}
+
+.indicator-persen{
+    color: #747474;
+    font-size: 15px;
+}
+
+.validasi-uang-muka .success-message{
+    padding: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 4px;
+    background: #ebf8f6;
+    color: #38baa7;
+    margin-bottom: 10px;
+}
+.validasi-uang-muka .warning-message{
+    padding: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 4px;
+    background: #fffae6;
+    color: #fea801;
+    margin-bottom: 10px;
+}
+
+.result-kpr{
+    border-top: 2px solid;
+    border-color: #2980b9;
+    padding-top: 15px;
+}
+
+.credit-fix, .credit-floating {
+    background: rgb(243, 247, 250);
+    padding: 20px 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.judul-credit-fix, .judul-credit-floating {    
+    font-size: 14px;
+    color: rgb(134, 141, 154);
+}
+
+.nominal-credit-fix, .nominal-credit-floating {
+    color: #2951a3;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.label {
+    color: #868f9a;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.nominal {
+    font-size: 14px;
+}
+
+.total-biaya-pertama {
+    padding: 8px ;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: rgb(243, 247, 250);
+    
+}
+
+.label-total {
+    font-size: 14px;
+}
+.nominal-total {
+    color: #1d3f83;
+}
+
+
+
+
+.pull-left{
+    float: left;
+}
+
+.input-kpr {
+    display: block;
+    outline: none;
+    -webkit-appearance: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: #fff;
+    line-height: 40px;
+    height: 43px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 8px;
+    margin-bottom: 15px;
+}
+
+.input-container{
+    width: 100%;
+    display: block;
+}
+
+.input-group{
+    /*width: 50%;*/
+    /*display: inline-block;*/
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.input-group p{
+    line-height: 0px;
+    margin-bottom: 14px;
+}
+
+.input-group:first{
+    margin-left: 0px;
+}
+
+.text-green{
+    color: green;
+}
+
+.btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 8px 14px;
+    font-size: 18px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-kpr{
+    background-color: green;
+    color: white;
+}
+
+.btn-kpr:hover{
+    opacity: 0.9;
+}
+
+.kpr-installment{
+    margin-top: 0px;
+    font-size: 20px;
+    color: green;
+    text-decoration: bold;
+}
+
+#nadaft-kpr-simulation-form{
+    max-width: 400px;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.show-installment{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.show-installment p{
+    margin-bottom: 0px;
+}
+
+.show-installment h6{
+    margin-top: 0px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/*@media only screen and (max-width: 767px) {
+    #nadaft-kpr-simulation-form{
+        width: 100%;
+    }
+}*/
