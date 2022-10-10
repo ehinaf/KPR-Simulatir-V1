@@ -10,7 +10,6 @@ Author URI: https://github.com/nurachmadfauzi
 
 // Register the script
 wp_register_script('accounting_js_script', plugins_url('/js/accounting.js', __FILE__ ));
-// wp_register_script( 'imask', "https://unpkg.com/imask");
 wp_register_script('jquery_inputmask_bundle', plugins_url("js/jquery.inputmask.bundle.min.js", __FILE__));
 wp_register_script('jquery_bootstrap_bundle', plugins_url("js/bootstrap.bundle.min.js", __FILE__));
 wp_register_script('jquery_inputmask_binding', plugins_url("js/inputmask.binding.js", __FILE__));
