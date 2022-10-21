@@ -176,19 +176,6 @@
                     <div class="nominal" id="angsuranPertama">Rp 544.281.653</div>
                 </div>
             </div>
-
-            <div class="row p-2">
-                <p class="title-form fw-bold text-dark border-bottom p-2">Ketentuan Penghasilan Minimal</p> 
-                
-                <div class="d-flex justify-content-between">
-                    <div class="label">Angsuran 30% dari penghasilan</div>
-                    <div class="nominal" id="30persenPenghasilan">Rp 10.741.243</div>
-                </div>
-                <div class="d-flex justify-content-between">
-                    <div class="label">Angsuran 40% dari penghasilan</div>
-                    <div class="nominal" id="40persenPenghasilan">Rp 8.055.932</div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
