@@ -1,7 +1,44 @@
 jQuery(document).ready(function () {
+    //Set Tooltip
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
+    //Set Color Input Range
+    const range = [ "rangePersenUangMuka", "rangejangkaWaktu"];
+
+    for (var i = 0; i < range.length; i++) {        
+        document.getElementById(range[i]).oninput = function() {
+            var value = (this.value-this.min+3)/(this.max-this.min+5)*100
+            this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+        }             
+    }
+
+    document.getElementById("rangeSukuBungaFix").oninput = function() {
+        var value = (this.value-this.min+1)/(this.max-this.min+2)*100
+        this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+    }
+    
+    document.getElementById("rangeMasaKreditFix").oninput = function() {
+        var value = (this.value-this.min+0.5)/(this.max-this.min+1)*100
+        this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+    }
+    
+    document.getElementById("rangeSukuBunga").oninput = function() {
+        var value = (this.value-this.min+0.5)/(this.max-this.min+1)*100
+        this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+    }
+
+    document.getElementById("margin").oninput = function() {
+        var value = (this.value-this.min+1)/(this.max-this.min+2)*100
+        this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+    }
+
+
+
+    //Aksi Jika Diklik Hitung
     jQuery("#myKpr-form").on('submit', function(event){
         event.preventDefault();
+        hargaProperty = jQuery("#hargaProperty").val();
 
         //Uang Muka
         nominalUangMuka = jQuery("#nominalUangMuka").val();        
@@ -9,10 +46,9 @@ jQuery(document).ready(function () {
         angsuranPertama = jQuery("#angsuranPertama");        
         
         nominalUangMuka_format = accounting.formatNumber(nominalUangMuka, 0, ".", ",");  
-        resultUangMuka = jQuery("#resultUangMuka").text( nominalUangMuka_format);
+        resultUangMuka = jQuery("#resultUangMuka").text( "Rp " + nominalUangMuka_format);
         
-        //Angsuran Pertama
-        hargaProperty = jQuery("#hargaProperty").val();
+        //Angsuran Pertama Konvensional
         jangkaWaktu = jQuery("#jangkaWaktu").val();
         sukuBungaFix = jQuery("#sukuBungaFix").val();
 
@@ -25,7 +61,23 @@ jQuery(document).ready(function () {
         angsuranPertama_format = accounting.formatNumber(totalAngsuranPertama, 0, ".", ",");
 
         angsuranPertama.text(angsuranPertama_format);
-        angsuranPertamaCard.text(angsuranPertama_format)
+        angsuranPertamaCard.text("Rp " + angsuranPertama_format)
+
+        //Angsuran Pertama Syariah
+        angsuranPertamaSy = jQuery("#angsuranPertamaSy");  
+        angsuranPertamaCardSy = jQuery("#angsuranPertamaCardSy");  
+
+        resultPinjamanPokok = hargaProperty - nominalUangMuka;
+        MarginPerBulan = (sukuBungaFix/100)/12;
+        totalAngsuranPertamaSy =  resultPinjamanPokok *  MarginPerBulan / ( 1- ((1 + MarginPerBulan)**(-jangkaWaktu*12)) ) 
+
+        formatTotalAngsuranPertamaSy = accounting.formatNumber(Math.round(totalAngsuranPertamaSy), 0, ".", ",") 
+
+        angsuranPertamaSy.text("Rp " + formatTotalAngsuranPertamaSy);
+        angsuranPertamaCardSy.text(formatTotalAngsuranPertamaSy);
+
+
+
        
         //Estimasi Biaya Lain
         persenUangMuka = jQuery("#persenUangMuka").val();
@@ -33,26 +85,43 @@ jQuery(document).ready(function () {
         estimasiBiayaNon =  (hargaProperty / 100) * 6;
         estimasiBiayaLain = ((100 - persenUangMuka) / 100) * estimasiBiayaNon;
         estimasiBiayaLain_format = accounting.formatNumber(estimasiBiayaLain, 0, ".", ",");        
-        jQuery("#estimasiBiayaLain").text(estimasiBiayaLain_format);
+        jQuery("#estimasiBiayaLain").text("Rp " + estimasiBiayaLain_format);
 
 
-        //Total Pembiayaan Pertama
+        //Total Pembiayaan Pertama Konvensional
 
         totalBiayaPertama = jQuery("#totalBiayaPertama");
         
         resulTotalBiaya = parseInt(nominalUangMuka) + parseInt(totalAngsuranPertama) + parseInt(estimasiBiayaLain);
         totalBiayaPertama_format = accounting.formatNumber(resulTotalBiaya, 0, ".", ",");
         totalBiayaPertama.text("Rp. " + totalBiayaPertama_format);
+
+        //Total Pembiayaan Pertama Syariah
+        totalBiayaPertamaSy = jQuery("#totalBiayaPertamaSy");     
+
+        resulTotalBiayaSy = parseInt(nominalUangMuka) + parseInt(Math.round(totalAngsuranPertamaSy)) + parseInt(estimasiBiayaLain);
+        totalBiayaPertamaSy_format = accounting.formatNumber(resulTotalBiayaSy, 0, ".", ",");
+
+        totalBiayaPertamaSy.text("Rp " + totalBiayaPertamaSy_format);
         
         //pinjaman Pokok
         pinjamanPokok = jQuery("#pinjamanPokok");
         resultPinjamanPokok = hargaProperty - nominalUangMuka;
         pinjamanPokok_format = accounting.formatNumber(resultPinjamanPokok, 0, ".", ",");
 
-        pinjamanPokok.text(pinjamanPokok_format);
-
-
+        pinjamanPokok.text("Rp " + pinjamanPokok_format);  
         
+        //Total Margin Pinjaman
+        TotalMarginPinjaman = jQuery("#totalMarginPinjaman");
+
+        MarginPinjaman = (Math.round(totalAngsuranPertamaSy) * (jangkaWaktu * 12))  - resultPinjamanPokok;
+        formatMarginPinjaman = accounting.formatNumber(MarginPinjaman, 0, ".", ",");
+
+        TotalMarginPinjaman.text("Rp " + formatMarginPinjaman);
+
+
+
+
     });
 
     // Validasi Uang Muka
@@ -93,6 +162,8 @@ jQuery(document).ready(function () {
 
     jQuery("#hargaProperty").on("input",function(){
         persenUangMuka = jQuery("#persenUangMuka").val();
+        nominalUangMuka = jQuery("#nominalUangMuka");
+
 
         nominalUangMuka.val((persenUangMuka / 100) * jQuery(this).val() );
     });
