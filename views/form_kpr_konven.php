@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row mt-2">
-        <div class="col-md-6 card-form-kpr">
+        <div class="card-form-kpr">
             <form method="post" accept-charset="utf-8" id="myKpr-form">
                 <div class="row">
                     <div class="col-5">
@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-7">
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Rp</span>
+                            <span class="input-group-text-custom" id="basic-addon1">Rp</span>
                             <input type="text" id="hargaProperty" min="1" value="500000000" class="form-control" placeholder="0" data-inputmask="'alias': 'numeric', 'groupSeparator': '', 'autoGroup': true" aria-describedby="basic-addon1">
                         </div>
                     </div>
@@ -20,8 +20,8 @@
                     <div class="col-8">
                         <div class="input-group mb-2">
                             <input type="text" id="persenUangMuka" value="20" class="form-control persen" placeholder="0" aria-label="persen" disabled>
-                            <span class="input-group-text">%</span>
-                            <span class="input-group-text">Rp</span>
+                            <span class="input-group-text-custom">%</span>
+                            <span class="input-group-text-custom">Rp</span>
                             <input type="text" id="nominalUangMuka" value="100000000" class="form-control" placeholder="0" aria-label="nominal">
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                     <div class="col-5">
                         <div class="input-group mb-2">
                             <input type="number" id="jangkaWaktu" min="1" max="30" value="20" class="form-control" placeholder="0">
-                            <span class="input-group-text" id="basic-addon1">Tahun</span>
+                            <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
                     </div>
                     <input type="range" id="rangejangkaWaktu" min="1" max="30" step="1" value="20">
@@ -59,7 +59,7 @@
                     <div class="col-5">
                         <div class="input-group mb-2">
                             <input type="number" id="sukuBungaFix" min="1" max="30" step="0.5" value="7.5" class="form-control" placeholder="0">
-                            <span class="input-group-text" id="basic-addon1">%</span>
+                            <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
                     </div>
                     <input type="range" id="rangeSukuBungaFix" min="1" max="15" step="0.5" value="7.5">
@@ -77,7 +77,7 @@
                     <div class="col-5">
                         <div class="input-group mb-2">
                             <input type="number" id="masaKreditFix" min="1" max="10" value="5" class="form-control" placeholder="0">
-                            <span class="input-group-text" id="basic-addon1">Tahun</span>
+                            <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
                     </div>
                     <input type="range" id="rangeMasaKreditFix" min="1" max="10" step="1" value="5">
@@ -95,7 +95,7 @@
                     <div class="col-5">
                         <div class="input-group mb-2">
                             <input type="number" id="sukuBunga" min="1" max="15" value="12" class="form-control" placeholder="0">
-                            <span class="input-group-text" id="basic-addon1">%</span>
+                            <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
                     </div>
                     <input type="range" id="rangeSukuBunga" min="1" max="15" step="1" value="12">
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="d-grid">
-                    <button class="btn btn-primary" type="submit">Hitung</button>
+                    <button class="btn" type="submit">Hitung</button>
                 </div>
             </form>
         </div>

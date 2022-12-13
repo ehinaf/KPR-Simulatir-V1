@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: NAF KPR Simulation
+Plugin Name: KPR Simulation
 Plugin URI: https://github.com/naf/nafkpr
 Description: Plugin simulasi KPR untuk Wordpress
-Version: 1.0
+Version: 1.2
 Author: Nur Achmad Fauzi
 Author URI: https://github.com/nurachmadfauzi
 */

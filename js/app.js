@@ -28,10 +28,10 @@ jQuery(document).ready(function () {
         this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
     }
 
-    document.getElementById("margin").oninput = function() {
-        var value = (this.value-this.min+1)/(this.max-this.min+2)*100
-        this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
-    }
+    // document.getElementById("margin").oninput = function() {
+    //     var value = (this.value-this.min+1)/(this.max-this.min+2)*100
+    //     this.style.background = 'linear-gradient(to right, #D3CC45 0%, #D3CC45 ' + value + '%, #fff ' + value + '%, white 100%)'
+    // }
 
 
 
