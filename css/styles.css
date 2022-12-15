@@ -152,6 +152,7 @@ input:focus {
     -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
+    -webkit-appearance: none;
 }
 
 

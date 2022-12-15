@@ -7,7 +7,7 @@
                         <p class="title-form">Harga Property</p>
                     </div>
                     <div class="col-7">
-                        <div class="input-groups mb-3">
+                        <div class="input-group mb-3">
                             <span class="input-group-text-custom" id="basic-addon1">Rp</span>
                             <input type="text" id="hargaProperty" min="1" value="500000000" class="form-control" placeholder="0" data-inputmask="'alias': 'numeric', 'groupSeparator': '', 'autoGroup': true" aria-describedby="basic-addon1">
                         </div>
@@ -18,7 +18,7 @@
                         <p class="title-form">Uang Muka</p>
                     </div>
                     <div class="col-8">
-                        <div class="input-groups mb-2">
+                        <div class="input-group mb-2">
                             <input type="text" id="persenUangMuka" value="20" class="form-control persen" placeholder="0" aria-label="persen" disabled>
                             <span class="input-group-text-custom">%</span>
                             <span class="input-group-text-custom">Rp</span>
@@ -39,7 +39,7 @@
                         <p class="title-form">Jangka Waktu</p>
                     </div>
                     <div class="col-5">
-                        <div class="input-groups mb-2">
+                        <div class="input-group mb-2">
                             <input type="number" id="jangkaWaktu" min="1" max="30" value="20" class="form-control" placeholder="0">
                             <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
@@ -57,7 +57,7 @@
                         <p class="title-form">Suku Bunga Fix</p>
                     </div>
                     <div class="col-5">
-                        <div class="input-groups mb-2">
+                        <div class="input-group mb-2">
                             <input type="number" id="sukuBungaFix" min="1" max="30" step="0.5" value="7.5" class="form-control" placeholder="0">
                             <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
@@ -75,7 +75,7 @@
                         <p class="title-form">Masa Kredit Fix</p>
                     </div>
                     <div class="col-5">
-                        <div class="input-groups mb-2">
+                        <div class="input-group mb-2">
                             <input type="number" id="masaKreditFix" min="1" max="10" value="5" class="form-control" placeholder="0">
                             <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
@@ -93,7 +93,7 @@
                         <p class="title-form">Suku Bunga Floating</p>
                     </div>
                     <div class="col-5">
-                        <div class="input-groups mb-2">
+                        <div class="input-group mb-2">
                             <input type="number" id="sukuBunga" min="1" max="15" value="12" class="form-control" placeholder="0">
                             <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
