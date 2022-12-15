@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="d-grid">
-                    <button class="btn" type="submit">Hitung</button>
+                    <button class="btn btn-hitung" type="submit">Hitung</button>
                 </div>
             </form>
         </div>
