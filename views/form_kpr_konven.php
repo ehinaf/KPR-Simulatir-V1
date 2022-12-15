@@ -112,7 +112,7 @@
             </form>
         </div>
 
-        <div class="col p-3">
+        <div class="col p-3 hasil">
             <p class="fs-5 fw-semibold title-hasil">Hasil Perhitungan</p>
 
             <div class="result-kpr">

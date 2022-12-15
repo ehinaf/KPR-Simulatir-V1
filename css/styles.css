@@ -143,16 +143,13 @@ input:focus {
 }
 
 
-.input-groups {
+.input-group {
     position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -ms-flex-align: stretch;
     align-items: stretch;
     width: 100%;
-    -webkit-appearance: none;
+    border: none !important;
 }
 
 
@@ -281,3 +278,10 @@ input[type="text"][disabled] {
     font-family: 'Poppins', sans-serif;
     color: #3b3b3b;
 }
+
+@media only screen and (max-width: 576px) {
+    .hasil{
+        margin-top: 30px;
+    }
+}
+
