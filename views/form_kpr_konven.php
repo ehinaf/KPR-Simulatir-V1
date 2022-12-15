@@ -123,7 +123,7 @@
                                 Angsuran/bulan (Masa kredit fix)
                             </div>
                             <div class="nominal-credit-fix" id="angsuranPertamaCard">
-                                3.222.373
+                                5.208.333
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Angsuran Pertama</div>
-                    <div class="nominal" id="angsuranPertama">3.222.373</div>
+                    <div class="nominal" id="angsuranPertama">Rp 5.208.333</div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Estimasi Biaya Lainnya
@@ -184,13 +184,13 @@
                         </span>
                     </div>
 
-                    <div class="nominal" id="estimasiBiayaLain">24.000.000</div>
+                    <div class="nominal" id="estimasiBiayaLain">Rp 24.000.000</div>
                 </div>
                 <div class="px-2">
 
                     <div class="d-flex justify-content-between total-biaya-pertama">
                         <div class="label-total">Total Pembiayaan Pertama</div>
-                        <div class="nominal-total" id="totalBiayaPertama">Rp 127.222.373</div>
+                        <div class="nominal-total" id="totalBiayaPertama">Rp 129.208.333</div>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,7 @@
                             <i class="far fa-question-circle" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="nominal" id="pinjamanPokok">400.000.000</div>
+                    <div class="nominal" id="pinjamanPokok">Rp 400.000.000</div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Estimasi Bunga Pinjaman</div>

@@ -60,8 +60,8 @@ jQuery(document).ready(function () {
 
         angsuranPertama_format = accounting.formatNumber(totalAngsuranPertama, 0, ".", ",");
 
-        angsuranPertama.text(angsuranPertama_format);
-        angsuranPertamaCard.text("Rp " + angsuranPertama_format)
+        angsuranPertama.text("Rp " + angsuranPertama_format);
+        angsuranPertamaCard.text( angsuranPertama_format)
 
         //Angsuran Pertama Syariah
         angsuranPertamaSy = jQuery("#angsuranPertamaSy");  
@@ -94,7 +94,7 @@ jQuery(document).ready(function () {
         
         resulTotalBiaya = parseInt(nominalUangMuka) + parseInt(totalAngsuranPertama) + parseInt(estimasiBiayaLain);
         totalBiayaPertama_format = accounting.formatNumber(resulTotalBiaya, 0, ".", ",");
-        totalBiayaPertama.text("Rp. " + totalBiayaPertama_format);
+        totalBiayaPertama.text("Rp " + totalBiayaPertama_format);
 
         //Total Pembiayaan Pertama Syariah
         totalBiayaPertamaSy = jQuery("#totalBiayaPertamaSy");     
