@@ -160,9 +160,10 @@ input:focus {
 }
 
 .form-control {
-    font-size: 13px;
-    border: 1px solid #D3CC45;
-    font-family: 'Poppins', sans-serif;
+    font-size: 13px !important;
+    border: 1px solid #D3CC45 !important;
+    font-family: 'Poppins', sans-serif !important;
+    height: 35px !important;
 }
 
 input.form-control.persen {
