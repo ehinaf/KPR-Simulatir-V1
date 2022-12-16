@@ -79,7 +79,7 @@ jQuery(document).ready(function () {
         pesentase2Float = ((1 + bungaBulanFloat)**(jangkaKreditFloat * 12))-1;
         jmlhpersenFloat = pesentase1Float / pesentase2Float;              
 
-        totalAngsuranPertamaFloat = 347608400 * bungaBulanFloat * jmlhpersenFloat;
+        totalAngsuranPertamaFloat = pokokPinjaman * bungaBulanFloat * jmlhpersenFloat;
 
         angsuranPertama_formatFloat = accounting.formatNumber(totalAngsuranPertamaFloat, 0, ".", ",");
 
