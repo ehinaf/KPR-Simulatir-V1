@@ -48,20 +48,45 @@ jQuery(document).ready(function () {
         nominalUangMuka_format = accounting.formatNumber(nominalUangMuka, 0, ".", ",");  
         resultUangMuka = jQuery("#resultUangMuka").text( "Rp " + nominalUangMuka_format);
         
-        //Angsuran Pertama Konvensional
+        //Angsuran Pertama Konvensional (Kredit Fix)
         jangkaWaktu = jQuery("#jangkaWaktu").val();
         sukuBungaFix = jQuery("#sukuBungaFix").val();
 
-        pokokPinjaman = hargaProperty / (jangkaWaktu * 12);
-        bungaTahun = hargaProperty * (sukuBungaFix / 100);
-        bungaBulan = bungaTahun / 12;
+        pokokPinjaman = hargaProperty - nominalUangMuka;
+        bungaBulanFix = (sukuBungaFix / 12 ) / 100;
+        pesentase1Fix = (1 + bungaBulanFix)**(jangkaWaktu * 12);
+        pesentase2Fix = ((1 + bungaBulanFix)**(jangkaWaktu * 12))-1;
+        jmlhpersen = pesentase1Fix / pesentase2Fix;              
 
-        totalAngsuranPertama = pokokPinjaman + bungaBulan;
+        totalAngsuranPertamaFix = pokokPinjaman * bungaBulanFix * jmlhpersen;
 
-        angsuranPertama_format = accounting.formatNumber(totalAngsuranPertama, 0, ".", ",");
+        angsuranPertama_formatFix = accounting.formatNumber(totalAngsuranPertamaFix, 0, ".", ",");
 
-        angsuranPertama.text("Rp " + angsuranPertama_format);
-        angsuranPertamaCard.text( angsuranPertama_format)
+        angsuranPertama.text("Rp " + angsuranPertama_formatFix);
+        angsuranPertamaCard.text(angsuranPertama_formatFix)
+
+        //Angsuran Pertama Konvensional (Kredit Floating)
+         
+        angsuranFloating  = jQuery("#angsuranFloating");
+        masaKreditFix  = jQuery("#masaKreditFix").val();
+        sukuBungaFloat  = jQuery("#sukuBungaFloat").val();
+        
+
+        jangkaKreditFloat = jangkaWaktu - masaKreditFix;
+
+        bungaBulanFloat = (sukuBungaFloat / 12 ) / 100;
+        pesentase1Float = (1 + bungaBulanFloat)**(jangkaKreditFloat * 12);
+        pesentase2Float = ((1 + bungaBulanFloat)**(jangkaKreditFloat * 12))-1;
+        jmlhpersenFloat = pesentase1Float / pesentase2Float;              
+
+        totalAngsuranPertamaFloat = 347608400 * bungaBulanFloat * jmlhpersenFloat;
+
+        angsuranPertama_formatFloat = accounting.formatNumber(totalAngsuranPertamaFloat, 0, ".", ",");
+
+        angsuranFloating.text(angsuranPertama_formatFloat)
+
+
+
 
         //Angsuran Pertama Syariah
         angsuranPertamaSy = jQuery("#angsuranPertamaSy");  
@@ -75,8 +100,6 @@ jQuery(document).ready(function () {
 
         angsuranPertamaSy.text("Rp " + formatTotalAngsuranPertamaSy);
         angsuranPertamaCardSy.text(formatTotalAngsuranPertamaSy);
-
-
 
        
         //Estimasi Biaya Lain
@@ -92,7 +115,7 @@ jQuery(document).ready(function () {
 
         totalBiayaPertama = jQuery("#totalBiayaPertama");
         
-        resulTotalBiaya = parseInt(nominalUangMuka) + parseInt(totalAngsuranPertama) + parseInt(estimasiBiayaLain);
+        resulTotalBiaya = parseInt(nominalUangMuka) + parseInt(Math.round(totalAngsuranPertama)) + parseInt(estimasiBiayaLain);
         totalBiayaPertama_format = accounting.formatNumber(resulTotalBiaya, 0, ".", ",");
         totalBiayaPertama.text("Rp " + totalBiayaPertama_format);
 
@@ -118,9 +141,6 @@ jQuery(document).ready(function () {
         formatMarginPinjaman = accounting.formatNumber(MarginPinjaman, 0, ".", ",");
 
         TotalMarginPinjaman.text("Rp " + formatMarginPinjaman);
-
-
-
 
     });
 
@@ -222,7 +242,7 @@ jQuery(document).ready(function () {
 
     // Validasi Suku Bunga Floating
 
-    jQuery("#sukuBunga").on("input",function(){
+    jQuery("#sukuBungaFloat").on("input",function(){
         
         rangeSukuBunga = jQuery("#rangeSukuBunga");
 
@@ -231,9 +251,9 @@ jQuery(document).ready(function () {
 
     jQuery("#rangeSukuBunga").on("input",function(){
             
-        sukuBunga = jQuery("#sukuBunga");
+        sukuBungaFloat = jQuery("#sukuBungaFloat");
 
-        sukuBunga.val(jQuery(this).val())
+        sukuBungaFloat.val(jQuery(this).val())
     });
 
 });

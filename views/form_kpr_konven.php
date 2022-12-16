@@ -94,11 +94,11 @@
                     </div>
                     <div class="col-5">
                         <div class="input-group mb-2">
-                            <input type="number" id="sukuBunga" min="1" max="15" value="12" class="form-control" placeholder="0">
+                            <input type="number" id="sukuBungaFloat" min="1" max="15" step="0.5" value="12" class="form-control" placeholder="0">
                             <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
                     </div>
-                    <input type="range" id="rangeSukuBunga" min="1" max="15" step="1" value="12">
+                    <input type="range" id="rangeSukuBunga" min="1" max="15" step="0.5" value="12">
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>1%</p>
@@ -123,7 +123,7 @@
                                 Angsuran/bulan (Masa kredit fix)
                             </div>
                             <div class="nominal-credit-fix" id="angsuranPertamaCard">
-                                5.208.333
+                                3.222.373
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <div class="judul-credit-floating">
                                 Angsuran/bulan (Masa kredit floating)
                             </div>
-                            <div class="nominal-credit-floating">
+                            <div class="nominal-credit-floating" id="angsuranFloating">
                                 4.171.885
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Angsuran Pertama</div>
-                    <div class="nominal" id="angsuranPertama">Rp 5.208.333</div>
+                    <div class="nominal" id="angsuranPertama">Rp 3.222.373</div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Estimasi Biaya Lainnya
@@ -190,7 +190,7 @@
 
                     <div class="d-flex justify-content-between total-biaya-pertama">
                         <div class="label-total">Total Pembiayaan Pertama</div>
-                        <div class="nominal-total" id="totalBiayaPertama">Rp 129.208.333</div>
+                        <div class="nominal-total" id="totalBiayaPertama">Rp 127.222.373</div>
                     </div>
                 </div>
             </div>
