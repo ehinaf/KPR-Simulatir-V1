@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: KPR Simulation
+Plugin Name: KPR Simulation V1
 Plugin URI: https://github.com/naf/nafkpr
 Description: Plugin simulasi KPR untuk Wordpress
 Version: 1.2
@@ -11,6 +11,8 @@ Author URI: https://github.com/nurachmadfauzi
 // Register the script
 wp_register_script('jquery', 'https://code.jquery.com/jquery-3.6.1.js');
 wp_register_script('accounting_js_script', plugins_url('/js/accounting.js', __FILE__));
+wp_register_script('jquery_inputmask_bundle', plugins_url('js/jquery.inputmask.bundle.min.js', __FILE__));
+wp_register_script('jquery_inputmask_binding', plugins_url('js/inputmask.binding.min.js', __FILE__));
 wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js');
 wp_register_script('jquery_bootstrap_bundle', "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js");
 wp_register_script('tooltip', "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/tooltip.js");
@@ -50,6 +52,8 @@ wp_enqueue_script('popper');
 wp_enqueue_script('jquery_bootstrap_bundle');
 wp_enqueue_script('tooltip');
 wp_enqueue_script('faicon');
+wp_enqueue_script('jquery_inputmask_bundle');
+wp_enqueue_script('jquery_inputmask_binding');
 wp_enqueue_script('kpr_js_script');
 wp_enqueue_style('kpr_bootstrap_css');
 wp_enqueue_style('kpr_simulation_css');

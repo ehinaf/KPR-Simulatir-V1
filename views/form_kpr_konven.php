@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row mt-2">
-        <div class="card-form-kpr">
+        <div class="card-form-kpr" id="konvensional">
             <form method="post" accept-charset="utf-8" id="myKpr-form">
                 <div class="row">
                     <div class="col-5">
@@ -9,23 +9,25 @@
                     <div class="col-7">
                         <div class="input-group mb-3">
                             <span class="input-group-text-custom" id="basic-addon1">Rp</span>
-                            <input type="text" id="hargaProperty" min="1" value="500000000" class="form-control" placeholder="0" data-inputmask="'alias': 'numeric', 'groupSeparator': '', 'autoGroup': true" aria-describedby="basic-addon1">
+                            <input type="text" id="hargaProperty" min="1" value="500000000" class="form-control" placeholder="0" data-inputmask="'alias': 'numeric', 'groupSeparator': '.', 'radixPoint': ',', 'autoGroup': true">
                         </div>
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-4">
+                    <div class="col-4 col-custom-left">
                         <p class="title-form">Uang Muka</p>
                     </div>
-                    <div class="col-8">
+                    <div class="col-8 col-custom-right">
                         <div class="input-group mb-2">
                             <input type="text" id="persenUangMuka" value="20" class="form-control persen" placeholder="0" aria-label="persen" disabled>
                             <span class="input-group-text-custom">%</span>
                             <span class="input-group-text-custom">Rp</span>
-                            <input type="text" id="nominalUangMuka" value="100000000" class="form-control" placeholder="0" aria-label="nominal">
+                            <input type="text" id="nominalUangMuka" value="100000000" class="form-control" placeholder="0" aria-label="nominal" data-inputmask="'alias': 'numeric', 'groupSeparator': '.', 'radixPoint': ',', 'autoGroup': true">
                         </div>
                     </div>
-                    <input type="range" id="rangePersenUangMuka" name="rangepersen" min="0" max="50" step="1" value="20">
+                    <div class="col-12">
+                        <input type="range" id="rangePersenUangMuka" name="rangepersen" min="0" max="50" step="1" value="20">
+                    </div>
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>0%</p>
@@ -44,7 +46,9 @@
                             <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
                     </div>
-                    <input type="range" id="rangejangkaWaktu" min="1" max="30" step="1" value="20">
+                    <div class="col-12">
+                        <input type="range" id="rangejangkaWaktu" min="1" max="30" step="1" value="20">
+                    </div>
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>1 tahun</p>
@@ -62,7 +66,9 @@
                             <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
                     </div>
-                    <input type="range" id="rangeSukuBungaFix" min="1" max="15" step="0.5" value="7.5">
+                    <div class="col-12">
+                        <input type="range" id="rangeSukuBungaFix" min="1" max="15" step="0.5" value="7.5">
+                    </div>
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>1%</p>
@@ -80,7 +86,9 @@
                             <span class="input-group-text-custom" id="basic-addon1">Tahun</span>
                         </div>
                     </div>
-                    <input type="range" id="rangeMasaKreditFix" min="1" max="10" step="1" value="5">
+                    <div class="col-12">
+                        <input type="range" id="rangeMasaKreditFix" min="1" max="10" step="1" value="5">
+                    </div>
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>1 tahun</p>
@@ -98,7 +106,9 @@
                             <span class="input-group-text-custom" id="basic-addon1">%</span>
                         </div>
                     </div>
-                    <input type="range" id="rangeSukuBunga" min="1" max="15" step="0.5" value="12">
+                    <div class="col-12">
+                        <input type="range" id="rangeSukuBunga" min="1" max="15" step="0.5" value="12">
+                    </div>
 
                     <div class="d-flex justify-content-between indicator-persen">
                         <p>1%</p>
@@ -112,7 +122,7 @@
             </form>
         </div>
 
-        <div class="col p-3 hasil">
+        <div class="col p-3 hasil" id="hasil">
             <p class="fs-5 fw-semibold title-hasil">Hasil Perhitungan</p>
 
             <div class="result-kpr">
@@ -133,7 +143,7 @@
                                 Angsuran/bulan (Masa kredit floating)
                             </div>
                             <div class="nominal-credit-floating" id="angsuranFloating">
-                                4.171.885
+                                4.404.345
                             </div>
                         </div>
                     </div>
@@ -153,35 +163,38 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Estimasi Biaya Lainnya
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-title="<p class='text-start'>Estimasi biaya-biaya yang harus disiapkan saat melakukan akad KPR. Jumlahnya berkisar 6% dari pokok pinjaman. Jumlah dapat berbeda di setiap bank.</p>
-                            <p class='text-start'>Meliputi</p>
-                            <ul class='text-start'>
-                                <li><span>Biaya Bank:</span>
-                                    <ul>
-                                        <li>Appraisal</li>
-                                        <li>Administrasi</li>
-                                        <li>Provisi</li>
-                                    </ul>
-                                </li>
-                                <li><span>Biaya Notaris:</span>
-                                    <ul>
-                                        <li>Akta Jual Beli</li>
-                                        <li>Bea Balik Nama</li>
-                                        <li>Akta SKMHT</li>
-                                        <li>Akta APHT</li>
-                                        <li>Perjanjian HT</li>
-                                        <li>Cek Sertifikat ZNT, PNBP HT</li>
-                                    </ul>
-                                </li>
-                                <li><span>Biaya Asuransi:</span>
-                                    <ul>
-                                        <li>Asuransi Jiwa</li>
-                                        <li>Asuransi Kebakaran</li>
-                                    </ul>
-                                </li>
-                            </ul>">
+                        <div class="tooltips1">
                             <i class="far fa-question-circle" aria-hidden="true"></i>
-                        </span>
+                            <span class="tooltipstext1">
+                                <p>Estimasi biaya-biaya yang harus disiapkan saat melakukan akad KPR. Jumlahnya berkisar 6% dari pokok pinjaman. Jumlah dapat berbeda di setiap bank.</p>
+                                Meliputi
+                                <ul>
+                                    <li class="disc"><span>Biaya Bank:</span>
+                                        <ul>
+                                            <li class="circle">Appraisal</li>
+                                            <li class="circle">Administrasi</li>
+                                            <li class="circle">Provisi</li>
+                                        </ul>
+                                    </li>
+                                    <li class="disc"><span>Biaya Notaris:</span>
+                                        <ul>
+                                            <li class="circle">Akta Jual Beli</li>
+                                            <li class="circle">Bea Balik Nama</li>
+                                            <li class="circle">Akta SKMHT</li>
+                                            <li class="circle">Akta APHT</li>
+                                            <li class="circle">Perjanjian HT</li>
+                                            <li class="circle">Cek Sertifikat ZNT, PNBP HT</li>
+                                        </ul>
+                                    </li>
+                                    <li class="disc"><span>Biaya Asuransi:</span>
+                                        <ul>
+                                            <li class="circle">Asuransi Jiwa</li>
+                                            <li class="circle">Asuransi Kebakaran</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="nominal" id="estimasiBiayaLain">Rp 24.000.000</div>
@@ -200,15 +213,16 @@
 
                 <div class="d-flex justify-content-between">
                     <div class="label">Pinjaman Pokok
-                        <span class="d-inline-block" tabindex="0" data-bs-toggle="tooltip" data-bs-html="true" data-bs-custom-class="custom-tooltip" data-bs-title="<p class='text-start'>Jumlah pinjaman total yang dihitung dari Harga Properti - Uang Muka</p>">
+                        <div class="tooltips2">
                             <i class="far fa-question-circle" aria-hidden="true"></i>
-                        </span>
+                            <span class="tooltipstext2">Jumlah pinjaman total yang dihitung dari Harga Properti - Uang Muka</span>
+                        </div>
                     </div>
                     <div class="nominal" id="pinjamanPokok">Rp 400.000.000</div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <div class="label">Estimasi Bunga Pinjaman</div>
-                    <div class="nominal" id="angsuranPertama">Rp 544.281.653</div>
+                    <div class="nominal" id="estimasiBungaPinjaman">Rp 586.124.480</div>
                 </div>
             </div>
         </div>
